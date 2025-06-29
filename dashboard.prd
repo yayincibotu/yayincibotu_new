@@ -1,0 +1,457 @@
+# YayıncıBotu Control Panel (CP) - Kullanıcı Dashboard v2.0
+## 📋 Product Requirements Document
+
+## 🎯 Proje Hedefi
+YayıncıBotu platformu için tam kapsamlı kullanıcı kontrol paneli geliştirme. Modern, kullanıcı dostu ve işlevsel bir dashboard ile kullanıcıların tüm hesap işlemlerini tek yerden yönetebilmesi.
+
+## 🌟 Vizyon
+- **All-in-One Dashboard**: Tek sayfada tüm işlemler
+- **Modern UI/UX**: Sofistike ve kullanıcı dostu tasarım
+- **Real-time Updates**: Canlı veri güncellemeleri
+- **Mobile-First**: Responsive ve touch-friendly
+- **Enterprise Ready**: Kurumsal kullanım için gelişmiş özellikler
+
+---
+
+## 📊 Dashboard Ana Özellikleri
+
+### 🏠 Ana Sayfa (/cp)
+- **Dashboard Overview**: Kullanıcının tüm verilerine hızlı bakış
+- **Quick Actions**: En sık kullanılan işlemler için kısayollar
+- **Real-time Notifications**: Canlı bildirimler
+- **Statistics Widgets**: Görsel istatistikler ve grafikler
+- **Recent Activity Feed**: Son aktiviteler timeline'ı
+
+### 📱 Navigation Structure
+```
+/cp
+├── /cp/dashboard          # Ana dashboard
+├── /cp/subscriptions      # Abonelik yönetimi
+├── /cp/orders            # Sipariş geçmişi
+├── /cp/payments          # Ödeme yöntemleri
+├── /cp/invoices          # Fatura yönetimi
+├── /cp/wallet            # Cüzdan işlemleri
+├── /cp/profile           # Profil ayarları
+├── /cp/security          # Güvenlik ayarları
+├── /cp/addresses         # Fatura adresleri
+└── /cp/settings          # Genel ayarlar
+```
+
+---
+
+## 🚀 Geliştirme Fazları
+
+### Phase 1: Temel Dashboard Infrastructure (4-5 saat)
+**Hedef**: Sağlam temeller ve navigation sistemi
+
+#### 1.1 Layout & Navigation System
+- [x] **Responsive Sidebar Navigation**: Collapsible sidebar with icons ✅
+- [x] **Top Header Bar**: User info, notifications, quick settings ✅
+- [x] **Breadcrumb Navigation**: Current page tracking ✅
+- [x] **Mobile Bottom Navigation**: Touch-friendly mobile nav ✅
+- [x] **Dark/Light Theme Toggle**: Theme switching infrastructure ✅
+
+#### 1.2 Dashboard Overview Page
+- [x] **Welcome Section**: Personalized greeting with user info ✅
+- [x] **Quick Stats Cards**: Total orders, active subscriptions, wallet balance ✅
+- [x] **Activity Timeline**: Recent orders, payments, subscription changes ✅
+- [x] **Quick Action Buttons**: New order, top-up wallet, view subscriptions ✅
+- [x] **Notification Center**: Important alerts and updates ✅
+
+#### 1.3 Authentication & Security
+- [x] **Protected Routes**: Route guards for /cp/* pages ✅
+- [x] **Session Management**: Auto-logout on inactivity ✅
+- [x] **Permission Checks**: Role-based access control ✅
+- [ ] **Two-Factor Auth Ready**: Infrastructure for 2FA
+- [ ] **Security Logs**: Login attempts and security events
+
+---
+
+### Phase 2: Abonelik & Sipariş Yönetimi (5-6 saat)
+**Hedef**: Comprehensive subscription and order management
+
+#### 2.1 Abonelik Yönetimi (/cp/subscriptions)
+- [x] **Active Subscriptions List**: Current subscription overview ✅
+- [x] **Subscription Details Modal**: Plan features, next billing date ✅
+- [x] **Plan Upgrade/Downgrade**: Interactive plan comparison ✅
+- [x] **Pause/Resume Subscriptions**: Temporary suspension options ✅
+- [x] **Subscription History**: All past subscription changes ✅
+- [x] **Auto-renewal Settings**: Toggle automatic renewals ✅
+- [x] **Subscription Analytics**: Usage statistics and insights ✅
+
+#### 2.2 Sipariş Yönetimi (/cp/orders)
+- [x] **Order History Table**: Filterable and sortable order list ✅
+- [x] **Order Status Tracking**: Real-time order progress ✅
+- [x] **Order Details Modal**: Complete order information ✅
+- [x] **Reorder Functionality**: Quick reorder for past orders ✅
+- [x] **Order Filters**: Date range, status, platform filters ✅
+- [x] **Order Search**: Search by order ID, service name ✅
+- [x] **Export Orders**: CSV/PDF export functionality ✅
+
+#### 2.3 Service Management
+- [ ] **Favorite Services**: Quick access to preferred services
+- [ ] **Service History**: Detailed usage patterns
+- [ ] **Service Recommendations**: AI-powered suggestions
+- [ ] **Bulk Order Creation**: Multiple service ordering
+- [ ] **Order Templates**: Saved order configurations
+
+---
+
+### Phase 3: Ödeme & Fatura Sistemi (4-5 saat)
+**Hedef**: Complete payment and invoicing solution
+
+#### 3.1 Ödeme Yöntemleri (/cp/payments)
+- [x] **Payment Methods List**: Credit cards, bank accounts overview ✅
+- [x] **Add Payment Method**: Secure card/bank addition ✅
+- [x] **Default Payment Method**: Primary payment selection ✅
+- [x] **Payment Method Security**: CVV verification, 3D Secure ✅
+- [x] **Remove Payment Methods**: Safe removal with confirmation ✅
+- [x] **Payment History**: All transaction history ✅
+- [x] **Failed Payment Retry**: Automatic retry mechanisms ✅
+
+#### 3.2 Fatura Yönetimi (/cp/invoices)
+- [x] **Invoice List**: All invoices with status indicators ✅
+- [x] **Invoice Details View**: Comprehensive invoice breakdown ✅
+- [x] **PDF Invoice Generation**: Professional invoice PDFs ✅
+- [x] **Invoice Download**: Bulk download functionality ✅
+- [x] **Invoice Email**: Send invoices to email ✅
+- [x] **Tax Management**: VAT/Tax calculations and display ✅
+- [x] **Invoice Search & Filter**: Advanced search capabilities ✅
+
+#### 3.3 Automatic Billing
+- [x] **Recurring Billing Setup**: Subscription auto-billing ✅
+- [x] **Billing Notifications**: Payment reminders and confirmations ✅
+- [x] **Failed Payment Handling**: Grace periods and retries ✅
+- [x] **Billing Address Validation**: Address verification ✅
+- [x] **Currency Support**: Multi-currency billing ✅
+
+---
+
+### Phase 4: Cüzdan & Finansal Yönetim (3-4 saat)
+**Hedef**: Complete wallet and financial management
+
+#### 4.1 Cüzdan Sistemi (/cp/wallet)
+- [x] **Wallet Balance Display**: Current balance with visual indicators ✅
+- [x] **Add Funds Interface**: Multiple top-up options ✅
+- [x] **Transaction History**: Complete wallet transaction log ✅
+- [x] **Spending Analytics**: Visual spending breakdowns ✅
+- [x] **Auto Top-up Settings**: Automatic balance maintenance ✅
+- [x] **Withdrawal Options**: Wallet fund withdrawal (if applicable) ✅
+- [x] **Promotional Credits**: Bonus credits and referral rewards ✅
+
+#### 4.2 Financial Analytics
+- [x] **Spending Dashboard**: Monthly/yearly spending analysis ✅
+- [x] **Cost Optimization**: Recommendations for cost savings ✅
+- [x] **Budget Settings**: Spending limits and alerts ✅
+- [x] **Financial Reports**: Detailed financial reports ✅
+- [x] **Export Financial Data**: CSV/Excel export for accounting ✅
+
+---
+
+### Phase 5: Profil & Güvenlik Yönetimi (3-4 saat)
+**Hedef**: Comprehensive profile and security management
+
+#### 5.1 Profil Ayarları (/cp/profile)
+- [ ] **Personal Information**: Name, email, phone editing
+- [ ] **Profile Photo Upload**: Avatar image management
+- [ ] **Account Preferences**: Language, timezone, notifications
+- [ ] **Communication Settings**: Email/SMS preferences
+- [ ] **Account Verification**: Email/phone verification status
+- [ ] **Profile Completion**: Progress tracking and incentives
+- [ ] **Social Media Links**: Platform account connections
+
+#### 5.2 Güvenlik Ayarları (/cp/security)
+- [ ] **Password Change**: Secure password update
+- [ ] **Two-Factor Authentication**: 2FA setup and management
+- [ ] **Login History**: Recent login activity
+- [ ] **Active Sessions**: Device session management
+- [ ] **Security Alerts**: Suspicious activity notifications
+- [ ] **Account Recovery**: Backup email/phone setup
+- [ ] **Privacy Settings**: Data sharing preferences
+
+#### 5.3 Fatura Adresleri (/cp/addresses)
+- [ ] **Billing Address Management**: Multiple address support
+- [ ] **Individual vs Corporate**: Personal and business addresses
+- [ ] **Tax Information**: Tax ID, VAT numbers for corporate
+- [ ] **Address Validation**: Real-time address verification
+- [ ] **Default Address**: Primary billing address selection
+- [ ] **Address Book**: Saved addresses for quick selection
+
+---
+
+### Phase 6: Gelişmiş Özellikler & Analytics (4-5 saat)
+**Hedef**: Advanced features and comprehensive analytics
+
+#### 6.1 Advanced Dashboard Features
+- [ ] **Custom Widgets**: Draggable dashboard customization
+- [ ] **Data Visualization**: Interactive charts and graphs
+- [ ] **Real-time Updates**: WebSocket-based live updates
+- [ ] **Dashboard Themes**: Multiple visual themes
+- [ ] **Widget Preferences**: Show/hide widget options
+- [ ] **Export Dashboard**: PDF dashboard reports
+
+#### 6.2 Notification & Alert System
+- [ ] **Smart Notifications**: AI-powered relevant alerts
+- [ ] **Notification Categories**: Order, billing, security, promotional
+- [ ] **Notification History**: Past notifications archive
+- [ ] **Push Notifications**: Browser push notification support
+- [ ] **Email Digests**: Weekly/monthly summary emails
+- [ ] **Custom Alert Rules**: User-defined notification triggers
+
+#### 6.3 Integration Features
+- [ ] **API Access**: Personal API keys for integrations
+- [ ] **Webhook Setup**: Custom webhook configurations
+- [ ] **Third-party Integrations**: Popular service integrations
+- [ ] **Data Export/Import**: Bulk data management
+- [ ] **GDPR Compliance**: Data privacy and export tools
+
+---
+
+## 🎨 Design Specifications
+
+### 🎨 Visual Design System
+```css
+/* Color Palette */
+--primary-purple: #8B5CF6
+--primary-blue: #3B82F6
+--success-green: #10B981
+--warning-orange: #F59E0B
+--error-red: #EF4444
+--neutral-gray: #6B7280
+
+/* Gradients */
+--gradient-primary: linear-gradient(135deg, #8B5CF6, #3B82F6)
+--gradient-success: linear-gradient(135deg, #10B981, #059669)
+--gradient-warning: linear-gradient(135deg, #F59E0B, #D97706)
+
+/* Layout */
+--sidebar-width: 280px
+--sidebar-collapsed: 80px
+--header-height: 64px
+--content-padding: 24px
+```
+
+### 📱 Responsive Breakpoints
+```css
+--mobile: 320px - 768px
+--tablet: 768px - 1024px
+--desktop: 1024px - 1440px
+--wide: 1440px+
+```
+
+### 🎯 Component Library
+- **Cards**: Gradient borders, glassmorphism effects
+- **Tables**: Sortable, filterable, pagination
+- **Forms**: Multi-step, validation, auto-save
+- **Modals**: Slide-up mobile, center desktop
+- **Charts**: Interactive, responsive, real-time
+- **Buttons**: Multiple variants, loading states
+- **Navigation**: Collapsible, breadcrumbs, tabs
+
+---
+
+## 📊 Data Architecture
+
+### 💾 Database Collections
+```typescript
+// User Profile
+interface UserProfile {
+  id: string
+  email: string
+  personal_info: PersonalInfo
+  billing_addresses: BillingAddress[]
+  preferences: UserPreferences
+  security_settings: SecuritySettings
+  created_at: Date
+  updated_at: Date
+}
+
+// Subscriptions
+interface Subscription {
+  id: string
+  user_id: string
+  plan_id: string
+  status: 'active' | 'paused' | 'cancelled' | 'expired'
+  current_period_start: Date
+  current_period_end: Date
+  auto_renew: boolean
+  payment_method_id: string
+  billing_history: BillingRecord[]
+}
+
+// Orders
+interface Order {
+  id: string
+  user_id: string
+  service_id: string
+  quantity: number
+  unit_price: number
+  total_amount: number
+  status: 'pending' | 'processing' | 'completed' | 'failed' | 'refunded'
+  payment_method: 'wallet' | 'card' | 'bank'
+  created_at: Date
+  completed_at?: Date
+}
+
+// Wallet
+interface WalletTransaction {
+  id: string
+  user_id: string
+  type: 'credit' | 'debit'
+  amount: number
+  description: string
+  reference_id?: string
+  created_at: Date
+}
+
+// Invoices
+interface Invoice {
+  id: string
+  user_id: string
+  order_ids: string[]
+  subscription_id?: string
+  amount: number
+  tax_amount: number
+  total_amount: number
+  status: 'pending' | 'paid' | 'overdue' | 'cancelled'
+  issue_date: Date
+  due_date: Date
+  pdf_url?: string
+}
+```
+
+---
+
+## 🚦 Implementation Roadmap
+
+### Week 1: Foundation (Phase 1)
+- Dashboard layout ve navigation
+- Authentication guards
+- Basic overview widgets
+- Theme system setup
+
+### Week 2: Core Features (Phase 2-3)
+- Subscription management
+- Order history
+- Payment methods
+- Invoice system
+
+### Week 3: Advanced Features (Phase 4-5)
+- Wallet system
+- Profile management
+- Security features
+- Address management
+
+### Week 4: Polish & Launch (Phase 6)
+- Advanced analytics
+- Notifications
+- Performance optimization
+- Testing ve bug fixes
+
+---
+
+## 🧪 Testing Strategy
+
+### 🔍 Test Coverage Areas
+- [ ] **Unit Tests**: Component functionality
+- [ ] **Integration Tests**: User workflows
+- [ ] **E2E Tests**: Complete user journeys
+- [ ] **Security Tests**: Authentication ve authorization
+- [ ] **Performance Tests**: Load times ve responsiveness
+- [ ] **Accessibility Tests**: WCAG 2.1 AA compliance
+
+### 📊 Success Metrics
+- [ ] Dashboard load time < 2 seconds
+- [ ] Mobile lighthouse score > 90
+- [ ] User task completion rate > 95%
+- [ ] Customer satisfaction score > 4.5/5
+- [ ] Zero security vulnerabilities
+- [ ] 99.9% uptime SLA
+
+---
+
+## 🔒 Security Considerations
+
+### 🛡️ Security Features
+- [ ] **HTTPS Everywhere**: SSL/TLS encryption
+- [ ] **CSRF Protection**: Cross-site request forgery protection
+- [ ] **XSS Prevention**: Content security policies
+- [ ] **SQL Injection Prevention**: Parameterized queries
+- [ ] **Rate Limiting**: API abuse prevention
+- [ ] **Session Security**: Secure session management
+- [ ] **Data Encryption**: Sensitive data encryption at rest
+
+### 🔐 Privacy & Compliance
+- [ ] **GDPR Compliance**: Data privacy regulations
+- [ ] **Data Retention**: Automated data cleanup
+- [ ] **Audit Logging**: Security event tracking
+- [ ] **Data Export**: User data portability
+- [ ] **Right to Deletion**: Account deletion workflows
+
+---
+
+## 🚀 Performance Optimization
+
+### ⚡ Performance Targets
+- [ ] **First Contentful Paint**: < 1.5s
+- [ ] **Largest Contentful Paint**: < 2.5s
+- [ ] **Cumulative Layout Shift**: < 0.1
+- [ ] **First Input Delay**: < 100ms
+- [ ] **Bundle Size**: < 500KB initial load
+
+### 🔧 Optimization Techniques
+- [ ] **Code Splitting**: Route-based splitting
+- [ ] **Lazy Loading**: Component ve image lazy loading
+- [ ] **Caching**: Intelligent caching strategies
+- [ ] **CDN**: Static asset delivery
+- [ ] **Database Optimization**: Query optimization
+- [ ] **Image Optimization**: WebP, responsive images
+
+---
+
+## 📱 Mobile Experience
+
+### 📲 Mobile-First Features
+- [ ] **Touch Gestures**: Swipe, pinch, tap interactions
+- [ ] **Offline Support**: Basic offline functionality
+- [ ] **PWA Features**: Installable web app
+- [ ] **Push Notifications**: Mobile push support
+- [ ] **Biometric Auth**: Fingerprint/Face ID support
+- [ ] **Mobile Payments**: Apple Pay, Google Pay integration
+
+---
+
+## 🎯 Success Criteria
+
+### 📈 Business KPIs
+- [ ] **User Engagement**: 50% increase in dashboard usage
+- [ ] **Self-Service**: 80% reduction in support tickets
+- [ ] **Payment Success**: 98% payment completion rate
+- [ ] **User Retention**: 25% increase in user retention
+- [ ] **Revenue Growth**: 15% increase from subscription upgrades
+
+### 💻 Technical KPIs
+- [ ] **Performance**: All Core Web Vitals green
+- [ ] **Accessibility**: WCAG 2.1 AA compliance
+- [ ] **Security**: Zero critical vulnerabilities
+- [ ] **Reliability**: 99.9% uptime
+- [ ] **Scalability**: Handle 10k concurrent users
+
+---
+
+## 📋 Phase Completion Checklist
+
+### ✅ Definition of Done
+Her phase için:
+- [ ] **Feature Complete**: Tüm özellikler implement edildi
+- [ ] **Tests Passing**: Unit, integration ve E2E testler geçiyor
+- [ ] **Performance Check**: Performance targets karşılandı
+- [ ] **Security Review**: Security checklist tamamlandı
+- [ ] **Accessibility**: A11y requirements karşılandı
+- [ ] **Documentation**: Teknik dokümantasyon hazır
+- [ ] **User Testing**: Kullanıcı testleri başarılı
+- [ ] **Stakeholder Approval**: İlgili taraflar onayladı
+
+---
+
+*Bu PRD, modern ve kapsamlı bir kullanıcı dashboard'ı için roadmap görevi görür. Her phase iterative olarak geliştirilecek ve sürekli kullanıcı geri bildirimleri ile optimize edilecektir.* 
